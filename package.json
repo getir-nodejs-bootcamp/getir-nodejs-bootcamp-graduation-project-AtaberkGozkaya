@@ -1,0 +1,26 @@
+{
+  "name": "getir-assignment",
+  "version": "1.0.0",
+  "description": "getir assignment",
+  "main": "v1/src/server.js",
+  "scripts": {
+    "start": "node v1/src/server.js",
+    "test": "jest --forceExit"
+  },
+  "author": "ataberk",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "fs": "^0.0.1-security",
+    "http-status": "^1.5.0",
+    "jest": "^27.4.5",
+    "joi": "^17.5.0",
+    "luxon": "^2.2.0",
+    "mongoose": "^6.1.3",
+    "mongoose-unique-validator": "^3.0.0",
+    "morgan": "^1.10.0",
+    "path": "^0.12.7",
+    "supertest": "^6.1.6"
+  }
+}
