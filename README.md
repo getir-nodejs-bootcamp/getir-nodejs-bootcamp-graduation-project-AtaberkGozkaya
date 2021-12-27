@@ -1,26 +1,75 @@
-# Getir Node.js Bootcamp Graduation Project
-## The Challenge
-We’d like you to create a RESTful API with a single endpoint that fetches the data in the provided MongoDB collection and return the results in the requested format.
-Requirements
-- The code should be written in Node.js using express framework
-- The endpoint should just handle HTTP POST requests.
-- The application should be deployed on AWS or Heroku. You don’t need to use any API Gateway, Load Balancers or any other layer than the developed application.
-- The up to date repo should be publicly available in Github, Bitbucket or equivalent.
+# Getir Nodejs Case Study
 
-## Deliverables
-- The public repo URL which has the source code of the project, and a set of instructions if there is any project specific configurations needed to run the project.
-- The public endpoint URL of the deployed API which is available for testing.
 
-## Worth Highlighting
-We expect these requirements can be delivered in 3 to 6 hours. However, it is not a speed test. Take your time! Your feedback on how much actual time you were needed to deliver the task will be very helpful but will not be used for the evaluation.
-You are free to use any libraries to deliver the needed functionality, but be prepared to explain other solutions that you would have implemented if you have more time.
 
-## Crucial Points
-- Delivering a Working RESTful API.
-- Clean and Production Ready Code
-- Error Handling
-- Comments and Documentation
-- Unit and/or Integration Tests (Jest is preferable but Mocha also works)
-- Avoid Over Engineering
 
-Good luck with this assignment! Try to make good use of this task to demonstrate and show off your coding skills. If you have any questions, don’t hesitate to ask your contact person within Getir.
+## Installation
+
+If you are not a tester, do not clone this repository. Server demo is up on https://getir-project-ataberk-gozkaya.herokuapp.com/.
+
+
+1. Install npm packages:
+
+```bash
+npm install
+```
+
+2. To run app just call following in your command line:
+
+```bash
+npm start
+```
+
+3. To run tests :
+
+```bash
+npm run test
+```
+
+#### Filter Records
+
+```http
+  POST /records
+```
+
+| Parameter | Type     | Description                |
+| :-------- | :------- | :------------------------- |
+| `startDate` | `String` | `Date(YYYY-MM-DD) format` |
+  `endDate` | `String`|`Date(YYYY-MM-DD) format`
+  `minCount`|`Number`| `Minimum count wanted for filtering`
+  `maxCount`|`Number`| `Maximum number wanted for filtering`
+
+
+### Get Records based on Query
+
+Method: `POST`
+
+Body:
+
+```json
+{
+  "startDate": "2013-10-01", 
+  "endDate": "2020-12-01", 
+  "minCount": 1000, 
+  "maxCount": 3000 
+}
+```
+
+**Response**
+
+Status: `200`
+
+```json
+{
+  "code": 0,
+    "msg": "Success",
+    "records": [
+    {
+         "key": "GjhjVIKb",
+         "createdAt": "2015-12-11T21:05:51.775Z",
+         "totalCount": 2737
+    },
+    ...
+  ]
+}
+```
